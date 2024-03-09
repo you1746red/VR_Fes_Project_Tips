@@ -1,7 +1,7 @@
 # VR_Fes_Project_Tips
   
 【概要】  
-ハッカソン（20223年12月16日）とVRフェス（2024年2月24日）で公開したARたけとんぼ、AR脳内ハッカーシミュレータの部品集  
+ハッカソン（2023年12月16日）とVRフェス（2024年2月24日）で公開したARたけとんぼ、AR脳内ハッカーシミュレータの部品集  
 主に制作物のコンポーネント紹介を目的としたプロジェクトとなります  
   
 【動作環境】  
@@ -47,4 +47,5 @@ Meta Quest3（MetaQuestビルド62.0）
 ・効果音ラボ様　https://soundeffect-lab.info/  
   
  【その他】  
- ・パススルー機能を実現するため、TheWorldBeyondサンプルプロジェクトの一部スクリプトやマテリアルを使用しています（Assets/Controllers/References）  
+ ・パススルー機能を実現するため、Unity-TheWorldBeyondサンプルプロジェクトの一部スクリプトやマテリアルを使用しています（Assets/Controllers/References）  
+　https://github.com/oculus-samples/Unity-TheWorldBeyond
