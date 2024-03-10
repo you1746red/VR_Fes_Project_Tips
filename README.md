@@ -27,7 +27,7 @@ Meta Quest3（MetaQuestビルド62.0）
 ・[Near] GizmosSphereを少し近くする  
 ・[GizmosSphereDistance] スライドの値に応じてGizmosSphereの距離が変化する  
   
-・[Taketonbo] ARたけとんぼ発射処理  
+・[Taketonbo] ARたけとんぼ発射処理（手を合わせて生成、手を放して発射）  
   
 ・[BigEnter] 大きなEnterキーを配置（押せる）  
 ・[KeyBoard] キーボード&モニターを配置（キー入力&表示可能）  
@@ -38,6 +38,11 @@ Meta Quest3（MetaQuestビルド62.0）
   
 ・[Exit] アプリ停止  
 ・[DestroyObject] 上記ボタンから表示したオブジェクトをすべて破棄  
+  
+・その他、ワールド原点と起動時の目線の位置にギズモっぽいスフィアを表示させています（位置確認用です）  
+  
+【スクリプトを確認したい場合】  
+基本的に、GameManager→○○Manager→△△Creater→□□オブジェクト（プレハブから生成）の順番になっていますのでその順番で参照を追っていただければ。  
   
 【使用アセット】  
 ・MetaXEAll-in-One SDK　60.0.0  

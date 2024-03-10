@@ -100,8 +100,6 @@ public class Taketonbo : MonoBehaviour
             this._audioSource.clip = this._shotSound;
             this._audioSource.Play();
             this.ClearHandPos();
-            this._isGround = false;
-            this._addForcing = true;
             this._addForceTime = distance * 2.5f;
         }
 
