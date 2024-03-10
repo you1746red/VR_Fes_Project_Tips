@@ -27,7 +27,7 @@ Meta Quest3（MetaQuestビルド62.0）
 ・[Near] GizmosSphereを少し近くする  
 ・[GizmosSphereDistance] スライドの値に応じてGizmosSphereの距離が変化する  
   
-・[Taketonbo] ARたけとんぼ発射処理（未実装）  
+・[Taketonbo] ARたけとんぼ発射処理  
   
 ・[BigEnter] 大きなEnterキーを配置（押せる）  
 ・[KeyBoard] キーボード&モニターを配置（キー入力&表示可能）  

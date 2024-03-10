@@ -16142,9 +16142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af4fe3f9003fa23419b4c7a30e9acf96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _taketonboPrefab: {fileID: 0}
-  _leftCollider: {fileID: 0}
-  _rightCollider: {fileID: 0}
+  _taketonboPrefab: {fileID: 7740901929971345806, guid: b3489f7e42fbb814980459a57472764a, type: 3}
+  _leftHandTransform: {fileID: 1344481990}
+  _rightHandTransform: {fileID: 1121465727}
 --- !u!4 &1609970877
 Transform:
   m_ObjectHideFlags: 0
@@ -19569,6 +19569,7 @@ MonoBehaviour:
   _bigEnterKeyCreater: {fileID: 1966521993}
   _realPlaneCreater: {fileID: 1527418160}
   _floorOnObjectCreater: {fileID: 34150221}
+  _taketonboCreater: {fileID: 1609970876}
   _angleSphereCreater: {fileID: 1191670324}
   _keyBoardCreater: {fileID: 2026080856}
   _sliderBarCreater: {fileID: 1955924550}
@@ -21433,6 +21434,6 @@ SceneRoots:
   - {fileID: 2026080857}
   - {fileID: 1955924551}
   - {fileID: 1191670325}
+  - {fileID: 1609970877}
   - {fileID: 497698354}
   - {fileID: 88439325}
-  - {fileID: 1609970877}

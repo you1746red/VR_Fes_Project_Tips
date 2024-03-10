@@ -5,21 +5,47 @@ using UnityEngine;
 public class TaketonboCreater : MonoBehaviour
 {
     [SerializeField] GameObject _taketonboPrefab;
-    [SerializeField] SphereCollider _leftCollider;
-    [SerializeField] SphereCollider _rightCollider;
+    [SerializeField] Transform _leftHandTransform;
+    [SerializeField] Transform _rightHandTransform;
 
     private List<GameObject> _taketonbos = new List<GameObject>();
+    private GameObject _taketonboOnHand;
 
-    [HideInInspector] public bool IsCreated { get; private set; }
+    [HideInInspector] public bool IsActived { get; private set; }
 
-    #region Create
-    public void Create()
+    #region Update
+    private void Update()
     {
-        if (this.IsCreated) return;
-        this.IsCreated = true;
+        if (this.IsActived == false) return;
 
-        GameObject obj = Instantiate(this._taketonboPrefab, Vector3.zero, Quaternion.identity, this.transform);
-        this._taketonbos.Add(obj);
+        if (this._taketonboOnHand == null)
+        {
+            // ¶Žè‚Æ‰EŽè‚Ì‹——£(10cmˆÈ“à)‚ÅŽè‡‚í‚¹”»’è
+            if (this.CheckHandDistance(0.1f) == false) return;
+
+            // ’|‚Æ‚ñ‚Úì¬
+            this.CreateTaketonbo();
+        }
+        else
+        {
+            // ¶Žè‚Æ’|‚Æ‚ñ‚Ú‚Ì‹——£(20cmˆÈ“à)‚ÅŠŽ”»’è
+            if (this.CheckTaketonboDistance(0.2f)) return;
+            this._taketonboOnHand = null;
+        }
+    }
+    #endregion
+
+    #region ActivateTaketonboSystem
+    public void ActivateTaketonboSystem()
+    {
+        this.IsActived = true;
+    }
+    #endregion
+
+    #region NotActivateTaketonboSystem
+    public void NotActivateTaketonboSystem()
+    {
+        this.IsActived = false;
     }
     #endregion
 
@@ -28,14 +54,53 @@ public class TaketonboCreater : MonoBehaviour
     {
         this._taketonbos.ForEach(obj => Destroy(obj.gameObject));
         this._taketonbos.Clear();
-        this.IsCreated = false;
+        this.IsActived = false;
     }
     #endregion
 
-    #region ReDeploy
-    public void ReDeploy()
+    // ƒ[ƒJƒ‹
+
+    #region CheckTaketonboDistance
+    private bool CheckTaketonboDistance(float threshold)
     {
-        this._taketonbos.ForEach(obj => obj.GetComponent<CircleArrangement>().Deploy());
+        float distance = Vector3.Distance(
+            this._taketonboOnHand.transform.position,
+            this._leftHandTransform.position);
+        bool isRange = distance < threshold;
+        return isRange;
+    }
+    #endregion
+
+    #region CheckHandDistance
+    private bool CheckHandDistance(float threshold)
+    {
+        float distance = Vector3.Distance(
+            this._leftHandTransform.position,
+            this._rightHandTransform.position);
+        bool isRange = distance < threshold;
+        return isRange;
+    }
+    #endregion
+
+    #region CreateTaketonbo
+    private void CreateTaketonbo()
+    {
+        // ’†ŠÔÀ•W
+        Vector3 position = Vector3.Lerp(
+            this._leftHandTransform.position,
+            this._rightHandTransform.position,
+            0.5f);
+
+        // ¶¬
+        GameObject obj = Instantiate(
+            this._taketonboPrefab,
+            position,
+            Quaternion.identity,
+            this.transform);
+        obj.GetComponent<Taketonbo>().LeftHandTransform = this._leftHandTransform;
+        obj.GetComponent<Taketonbo>().RightHandTransform = this._rightHandTransform;
+        this._taketonboOnHand = obj;
+        this._taketonbos.Add(obj);
     }
     #endregion
 }

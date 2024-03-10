@@ -42,6 +42,9 @@ public class WorldCenterSphere : MonoBehaviour
         GameObject floorPlane = this.GetFloorPlaneRayTest();
         if (floorPlane == null) return;
         this._floorHeight = floorPlane.transform.position.y - this.transform.position.y;
+
+        // è∞Ç…É^ÉOê›íË
+        floorPlane.tag = "Ground";
     }
     #endregion
 

@@ -10,6 +10,7 @@ public class ControlPanelManager : MonoBehaviour
     [SerializeField] BigEnterKeyCreater _bigEnterKeyCreater;
     [SerializeField] RealPlaneCreater _realPlaneCreater;
     [SerializeField] FloorOnObjectCreater _floorOnObjectCreater;
+    [SerializeField] TaketonboCreater _taketonboCreater;
     [SerializeField] AngleSphereCreater _angleSphereCreater;
     [SerializeField] KeyBoardCreater _keyBoardCreater;
     [SerializeField] SliderBarCreater _sliderBarCreater;
@@ -26,6 +27,7 @@ public class ControlPanelManager : MonoBehaviour
         this._controlPanel.GetComponent<ControlPanel>().CreateBigEnterKey += this.OnCreateBigEnterKey;
         this._controlPanel.GetComponent<ControlPanel>().CreateRealPlane += this.OnRealPlaneTimeStart;
         this._controlPanel.GetComponent<ControlPanel>().CreateFloorOnObject += this.OnCreateFloorOnObject;
+        this._controlPanel.GetComponent<ControlPanel>().CreateTaketonbo += this.OnCreateTaketonbo;
         this._controlPanel.GetComponent<ControlPanel>().CreateAngleSphere += this.OnCreateAngleSphere;
         this._controlPanel.GetComponent<ControlPanel>().CreateKeyBoard += this.OnCreateKeyBoard;
         this._controlPanel.GetComponent<ControlPanel>().CreateSliderBar += this.OnCreateSliderBar;
@@ -55,6 +57,7 @@ public class ControlPanelManager : MonoBehaviour
         this._realPlaneCreater.TimeStop();
         this._realPlaneCreater.DestroyInChildren();
         this._floorOnObjectCreater.DestroyInChildren();
+        this._taketonboCreater.DestroyInChildren();
         this._angleSphereCreater.DestroyInChildren();
         this._keyBoardCreater.DestroyInChildren();
         this._sliderBarCreater.DestroyInChildren();
@@ -74,6 +77,14 @@ public class ControlPanelManager : MonoBehaviour
     {
         Debug.Log("@@@ OnCreateFloorOnObject");
         this._floorOnObjectCreater.Create();
+    }
+    #endregion
+
+    #region OnCreateTaketonbo
+    private void OnCreateTaketonbo()
+    {
+        Debug.Log("@@@ OnCreateTaketonbo");
+        this._taketonboCreater.ActivateTaketonboSystem();
     }
     #endregion
 
