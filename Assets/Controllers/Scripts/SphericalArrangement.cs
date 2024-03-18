@@ -66,8 +66,8 @@ public class SphericalArrangement : MonoBehaviour
         Transform centerTrans = WorldCenterSphere.Instance.transform;
 
         // オイラー角→ラジアン角→球面座標計算
-        float degAngleTheta = this._xAngle;
-        float degAngleFai = this._yAngle + centerTrans.eulerAngles.y;
+        float degAngleTheta = -1 * this._xAngle;
+        float degAngleFai = this._yAngle + centerTrans.eulerAngles.y - 90f;
         float radAngleTheta = degAngleTheta * Mathf.Deg2Rad;
         float radAngleFai = degAngleFai * Mathf.Deg2Rad;
         float posX = this._distance * Mathf.Cos(radAngleTheta) * Mathf.Cos(radAngleFai);

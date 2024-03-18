@@ -22,7 +22,7 @@ public class RealPlaneCreater : MonoBehaviour
         var xAngles = Enumerable.Range(0, 9).ToList().Select(index => -60f + 15f * index);
         var yAngles = Enumerable.Range(0, 360/15).ToList().Select(index => -180f + 15f * index);
         //var xAngles = new List<float>() { -60f, -45f, -30f, -15f, 0f, 15f, 30f, 45f, 60f };
-        //var yAngles = new List<float>() { -180f, -150f, -120f, -90f, -60f, -30f, 0f, 30f, 60f, 90f, 120f, 150f };
+        //var yAngles = new List<float>() { -120f, -90f, -60f, -30f, 0f, 30f, 60f, 90f, 120f };
         foreach (float xAngle in xAngles)
         {
             foreach (float yAngle in yAngles)
